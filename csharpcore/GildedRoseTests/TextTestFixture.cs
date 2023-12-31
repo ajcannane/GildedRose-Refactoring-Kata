@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using GildedRoseKata;
+using GildedRose;
 
 namespace GildedRoseTests;
 
@@ -38,7 +38,7 @@ public static class TextTestFixture
             new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
         };
 
-        var app = new GildedRose(items);
+        var app = new GildedRose.GildedRose(items);
 
         int days = 2;
         if (args.Length > 0)
@@ -50,9 +50,9 @@ public static class TextTestFixture
         {
             Console.WriteLine("-------- day " + i + " --------");
             Console.WriteLine("name, sellIn, quality");
-            for (var j = 0; j < items.Count; j++)
+            foreach (var t in items)
             {
-                Console.WriteLine(items[j].Name + ", " + items[j].SellIn + ", " + items[j].Quality);
+                Console.WriteLine(t.Name + ", " + t.SellIn + ", " + t.Quality);
             }
             Console.WriteLine("");
             app.UpdateQuality();

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using GildedRoseKata;
+using GildedRose;
 using NUnit.Framework;
 
 namespace GildedRoseTests;
@@ -10,7 +10,7 @@ public class GildedRoseTest
     public void Foo()
     {
         var items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
-        var app = new GildedRose(items);
+        var app = new GildedRose.GildedRose(items);
         app.UpdateQuality();
         Assert.AreEqual("fixme", items[0].Name);
     }
